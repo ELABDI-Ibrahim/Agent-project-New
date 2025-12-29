@@ -1,0 +1,57 @@
+{
+  "columns": {
+    "equipment_id": {
+      "description": "Unique identifier for equipment",
+      "data_type": "categorical",
+      "is_nullable": false
+    },
+    "timestamp": {
+      "description": "Date and time of maintenance event",
+      "data_type": "temporal",
+      "is_nullable": false
+    },
+    "failure_type": {
+      "description": "Type of equipment failure",
+      "data_type": "categorical",
+      "is_nullable": true,
+      "categorical_values": ["mechanical", "electrical", "software", "other"]
+    },
+    "temperature": {
+      "description": "Operating temperature in Celsius",
+      "data_type": "numerical",
+      "unit": "°C",
+      "valid_range": [-20, 100],
+      "is_nullable": true
+    },
+    "pressure": {
+      "description": "System pressure in PSI",
+      "data_type": "numerical",
+      "unit": "PSI",
+      "valid_range": [0, 500],
+      "is_nullable": true
+    },
+    "runtime_hours": {
+      "description": "Total equipment runtime in hours",
+      "data_type": "numerical",
+      "unit": "hours",
+      "is_nullable": false
+    },
+    "maintenance_cost": {
+      "description": "Cost of maintenance in USD",
+      "data_type": "numerical",
+      "unit": "USD",
+      "is_nullable": true
+    },
+    "downtime_minutes": {
+      "description": "Equipment downtime in minutes",
+      "data_type": "numerical",
+      "unit": "minutes",
+      "is_nullable": true
+    }
+  },
+  "primary_keys": ["equipment_id", "timestamp"],
+  "relationships": {
+    "temperature_pressure": "Temperature and pressure are correlated in this system",
+    "runtime_maintenance": "Higher runtime hours typically correlate with more frequent maintenance"
+  }
+}

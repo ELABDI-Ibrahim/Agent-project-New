@@ -1,0 +1,14 @@
+{
+  "success": false,
+  "current_step": 2,
+  "total_steps": 4,
+  "errors": [
+    "Analyzer failed: Statistical analysis failed: 'NoneType' object has no attribute 'select_dtypes'"
+  ],
+  "warnings": [],
+  "execution_time": 0,
+  "has_collector_results": true,
+  "has_analyzer_results": false,
+  "has_decision_results": false,
+  "has_report": false
+}
